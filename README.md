@@ -1,76 +1,40 @@
-# Tic-Tac-Toe Game Using Arduino
+# Electrical and Electronics Engineering – Mini Projects
 
-A two-player Tic-Tac-Toe game built using an Arduino UNO, a 4x4 matrix keypad and a 20x4 I2C LCD.
+This repository contains mini projects developed as part of my learning in Electrical and Electronics Engineering, embedded systems and practical hardware implementation.
 
-## Components Required
+## Projects
 
-- Arduino UNO
-- 4x4 matrix keypad
-- 20x4 LCD with I2C module
-- Jumper wires
+### 1. Smart Fire and Gas Detection System Using ESP32
 
-## Connections
+An ESP32-based monitoring prototype using a DHT22, MQ-2 gas/smoke sensor and LDR light sensor. It provides local LED/buzzer indications, LCD readings and Blynk IoT monitoring/notifications.
 
-### Keypad to Arduino UNO
+- ESP32-based sensor monitoring
+- Temperature and humidity measurement
+- MQ-2 raw gas/smoke sensor readings
+- LDR high-light indication
+- Three-level status indication using LEDs
+- LCD display and Blynk dashboard integration
 
-| Keypad pin | Arduino pin |
-|---|---|
-| Row 1 | D9 |
-| Row 2 | D8 |
-| Row 3 | D7 |
-| Row 4 | D6 |
-| Column 1 | D5 |
-| Column 2 | D4 |
-| Column 3 | D3 |
-| Column 4 | D2 |
+**Project documentation:** [Smart Fire and Gas Detection README](smart-fire-and-gas-detection/README.md)  
+**Source code:** [smart_fire_gas_detection.ino](smart-fire-and-gas-detection/Code/smart_fire_gas_detection.ino)
 
-### I2C LCD to Arduino UNO
+> Safety note: This is an educational prototype, not a certified fire or gas safety device. The LDR detects light intensity rather than confirming flame, and the MQ-2 value is an uncalibrated ADC reading.
 
-| LCD pin | Arduino pin |
-|---|---|
-| SDA | A4 |
-| SCL | A5 |
-| VCC | 5V |
-| GND | GND |
+### 2. Tic-Tac-Toe Game Using Arduino
 
-The sketch uses I2C address `0x27`. Change it in the code if your LCD module uses a different address.
+A two-player game built using an Arduino UNO, 4×4 matrix keypad and 20×4 I2C LCD.
 
-## How to Play
+- Keypad-based player input
+- LCD display of the game board and current turn
+- Win and draw detection
+- Restart function
 
-1. The LCD displays the 3x3 game board.
-2. Player X starts. Players take turns entering a number from 1 to 9 on the keypad.
-3. The number selects the matching position on the board.
-4. The first player to complete a row, column or diagonal wins.
-5. If all nine positions are filled without a winner, the game is a draw.
-6. Press **0** to restart the game.
+**Source code:** [tic_tac_toe.ino](tic-tac-toe-arduino/Code/tic_tac_toe.ino)
 
-## Simple Code Explanation
+## Repository Structure
 
-1. The program includes the LCD and keypad libraries and defines the game settings.
-2. The `setup()` function starts the LCD and prepares the game.
-3. The `loop()` function reads keypad input and processes each move.
-4. The `resetBoard()` function clears all nine positions.
-5. The `updateDisplay()` function shows the board and current turn on the LCD.
-6. The `symbolForPlayer()` function displays X, O or a blank space.
-7. The program changes turns after each valid move.
-8. The `checkWinCondition()` function checks rows, columns and diagonals for a winner.
-9. The `isBoardFull()` function checks whether the game is a draw.
-10. Pressing 0 starts a new game.
-
-## Libraries Required
-
-Install these libraries through the Arduino IDE Library Manager:
-
-- Keypad
-- LiquidCrystal_I2C
-
-## Source Code
-
-The Arduino sketch is available in [tic_tac_toe.ino](tic-tac-toe-arduino/Code/tic_tac_toe.ino).
-
-## Possible Improvements
-
-LED indicators or a buzzer can be added to provide extra visual or audio feedback.
+- `smart-fire-and-gas-detection/` – ESP32 fire and gas monitoring prototype
+- `tic-tac-toe-arduino/` – Arduino keypad-based Tic-Tac-Toe game
 
 ---
-*Academic mini project in Electrical and Electronics Engineering.*
+*Academic mini projects – Electrical and Electronics Engineering.*
