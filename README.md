@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game Using Arduino
 
-A two-player Tic-Tac-Toe game built using an Arduino, a 4x4 matrix keypad and a 20x4 I2C LCD.
+A two-player Tic-Tac-Toe game built using an Arduino UNO, a 4x4 matrix keypad and a 20x4 I2C LCD.
 
 ## Components Required
 
@@ -50,11 +50,12 @@ The sketch uses I2C address `0x27`. Change it in the code if your LCD module use
 2. The `setup()` function starts the LCD and prepares the game.
 3. The `loop()` function reads keypad input and processes each move.
 4. The `resetBoard()` function clears all nine positions.
-5. The `updateDisplay()` function shows the board and game status on the LCD.
+5. The `updateDisplay()` function shows the board and current turn on the LCD.
 6. The `symbolForPlayer()` function displays X, O or a blank space.
-7. The `switchPlayers()` function changes the turn after a valid move.
-8. The `checkWinCondition()` function checks rows, columns, diagonals and draws.
-9. Pressing 0 starts a new game.
+7. The program changes turns after each valid move.
+8. The `checkWinCondition()` function checks rows, columns and diagonals for a winner.
+9. The `isBoardFull()` function checks whether the game is a draw.
+10. Pressing 0 starts a new game.
 
 ## Libraries Required
 
@@ -65,7 +66,7 @@ Install these libraries through the Arduino IDE Library Manager:
 
 ## Source Code
 
-The Arduino sketch is available in [Code/tic_tac_toe.ino](Code/tic_tac_toe.ino).
+The Arduino sketch is available in [tic_tac_toe.ino](tic-tac-toe-arduino/Code/tic_tac_toe.ino).
 
 ## Possible Improvements
 
